@@ -2,26 +2,30 @@
 
 Quick setup of a new computer under ubuntu :
 
-- [] phpstorm
-- [] slack
-- [] spotify
-- [] thunderbird
-- [] chrome
-- [] docker
-- [] docker-compose
-- [] zsh
-- [] ohmyzsh
-- [] nextcloud
-- [] dbeaver
-- [] emote
-- [] peek
-- [] gitkraken
-- [] gnome-tweaks
-- [] signal
-- [] discord
-- [] mattermost
-- [] vim
-- [] ssh-key
+- [x] phpstorm
+- [x] slack
+- [x] spotify
+- [x] thunderbird
+- [x] chrome
+- [x] docker
+- [x] docker-compose
+- [x] zsh
+- [x] ohmyzsh
+- [ ] nextcloud
+- [x] dbeaver
+- [x] emote
+- [x] peek
+- [x] gitkraken
+- [x] gnome-tweaks
+- [x] signal
+- [x] discord
+- [ ] mattermost
+- [x] vim
+- [ ] ssh-key
+- [x] hstr
+- [x] wget
+- [x] curl
+- [x] zoom
 
 Type first :
 ```bash
