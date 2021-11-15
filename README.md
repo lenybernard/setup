@@ -11,7 +11,7 @@ Quick setup of a new computer under ubuntu :
 - [x] docker-compose
 - [x] zsh
 - [x] ohmyzsh
-- [ ] nextcloud
+- [x] nextcloud
 - [x] dbeaver
 - [x] emote
 - [x] peek
@@ -19,9 +19,9 @@ Quick setup of a new computer under ubuntu :
 - [x] gnome-tweaks
 - [x] signal
 - [x] discord
-- [ ] mattermost
+- [x] mattermost
 - [x] vim
-- [ ] ssh-key
+- [x] ssh-key
 - [x] hstr
 - [x] wget
 - [x] curl

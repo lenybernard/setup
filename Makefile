@@ -1,8 +1,10 @@
-install: git curl wget phpstorm slack spotify thunderbird chrome docker docker-compose zsh ohmyzsh hstr nextcloud dbeaver emote peek gitkraken tweaks signal discord mattermost vim ssh-key
+install: git curl wget phpstorm slack spotify thunderbird chrome zoom docker docker-compose zsh ohmyzsh hstr nextcloud dbeaver emote peek gitkraken tweaks signal discord mattermost vim ssh-key
 
 APT=sudo apt-get
 APT_INSTALL=$(APT) install -y
 ADD_APT_REPO=sudo add-apt-repository -y
+LSB_RELEASE=$(shell lsb_release -cs)
+ARCH=$(shell dpkg --print-architecture)
 
 git:
 	$(APT_INSTALL) git
@@ -26,6 +28,7 @@ ohmyzsh:
 docker:
 	$(APT_INSTALL) apt-transport-https ca-certificates gnupg lsb-release
 	curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+	echo "deb [arch=$(ARCH) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(LSB_RELEASE) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 	sudo apt-get update
 	$(APT_INSTALL) docker-ce docker-ce-cli containerd.io
 
@@ -63,8 +66,17 @@ phpstorm:
 signal:
 	make snap APP=signal-desktop
 
+nextcloud:
+	make snap APP=nextcloud
+
 dbeaver:
 	make snap APP=dbeaver-ce
+
+discord:
+	make snap APP=discord
+
+mattermost:
+	make snap APP=mattermost-desktop
 
 hstr:
 	$(ADD_APT_REPO) ppa:ultradvorka/ppa
@@ -72,10 +84,13 @@ hstr:
 	$(APT_INSTALL) hstr
 	hstr --show-configuration >> ~/.zshrc
 
+ssh-key:
+	ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519 -N ""
+
 thunderbird:
 	make snap APP=thunderbird
 
-gnome-tweaks:
+tweaks:
 	$(APT_INSTALL) gnome-tweaks
 
 chrome:
