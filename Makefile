@@ -17,7 +17,7 @@ wget:
 
 zsh:
 	$(APT_INSTALL) zsh
-	chsh -s /usr/bin/zsh leny
+	chsh -s /usr/bin/zsh ${whoami}
 	sudo chsh -s /usr/bin/zsh root
 
 ohmyzsh:
