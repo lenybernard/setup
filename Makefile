@@ -1,4 +1,4 @@
-install: git curl wget phpstorm slack spotify thunderbird chrome zoom docker docker-compose zsh ohmyzsh hstr nextcloud dbeaver emote peek gitkraken tweaks signal discord mattermost vim ssh-key
+install: git curl wget phpstorm slack spotify thunderbird chrome zoom docker docker-compose zsh ohmyzsh hstr nextcloud dbeaver emote peek gitkraken tweaks signal discord mattermost vim ssh-key keeweb
 
 APT=sudo apt-get
 APT_INSTALL=$(APT) install -y
@@ -97,3 +97,8 @@ chrome:
 	wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 	$(APT_INSTALL) ./google-chrome-stable_current_amd64.deb
 	rm google-chrome-stable_current_amd64.deb*
+	
+keeweb:
+	wget https://github.com/keeweb/keeweb/releases/download/v1.18.7/KeeWeb-1.18.7.linux.x64.deb
+	$(APT_INSTALL) ./KeeWeb-1.18.7.linux.x64.deb
+	rm KeeWeb-1.18.7.linux.x64.deb
