@@ -67,7 +67,7 @@ signal:
 	make snap APP=signal-desktop
 
 nextcloud:
-	make snap APP=nextcloud
+	make snap APP=nextcloud-desktop-client
 
 dbeaver:
 	make snap APP=dbeaver-ce
