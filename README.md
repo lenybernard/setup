@@ -4,11 +4,11 @@ Quick setup of a new computer under ubuntu :
 
 - [x] phpstorm
 - [x] slack
+- [x] Cursor
 - [x] spotify
 - [x] thunderbird
 - [x] chrome
 - [x] docker
-- [x] docker-compose
 - [x] zsh
 - [x] ohmyzsh
 - [x] nextcloud

@@ -1,4 +1,4 @@
-install: git curl wget phpstorm slack spotify thunderbird chrome zoom docker docker-compose zsh ohmyzsh hstr nextcloud dbeaver emote peek gitkraken tweaks signal discord mattermost vim ssh-key keeweb
+install: git curl wget cursor slack spotify thunderbird chromium zoom docker zsh ohmyzsh hstr nextcloud dbeaver emote peek gitkraken tweaks signal discord mattermost vim ssh-key keeweb
 
 APT=sudo apt-get
 APT_INSTALL=$(APT) install -y
@@ -32,13 +32,8 @@ docker:
 	sudo apt-get update
 	$(APT_INSTALL) docker-ce docker-ce-cli containerd.io
 
-docker-compose:
-	sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-	sudo chmod +x /usr/local/bin/docker-compose
-	sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
-
 zoom:
-	wget https://zoom.us/client/latest/zoom_amd64.deb
+	wget https://cdn.zoom.us/prod/6.5.11.4015/zoom_amd64.deb
 	sudo apt --fix-broken -y install ./zoom_amd64.deb
 	rm zoom_amd64.deb*
 
@@ -102,3 +97,6 @@ keeweb:
 	wget https://github.com/keeweb/keeweb/releases/download/v1.18.7/KeeWeb-1.18.7.linux.x64.deb
 	$(APT_INSTALL) ./KeeWeb-1.18.7.linux.x64.deb
 	rm KeeWeb-1.18.7.linux.x64.deb
+
+ulauncher:
+	$(ADD_APT_REPO) universe -y && sudo $(ADD_APT_REPO) ppa:agornostal/ulauncher -y && $(APT) update && $(APT) install ulauncher
